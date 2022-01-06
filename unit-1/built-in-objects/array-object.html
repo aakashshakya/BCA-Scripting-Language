@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Array Object</title>
+</head>
+
+<body>
+    <script>
+        myFirstArray = new Array();
+        myFirstArray.push(1);
+        myFirstArray.push(2);
+        myFirstArray.push(5);
+        myFirstArray.push(10);
+        document.write('The length of first array is ' + myFirstArray.length);
+
+        mySecondArray = new Array(12, 11, 10);
+        document.write('<br>The length of second array is ' + mySecondArray.length);
+
+
+        myThirdArray = [];
+        myThirdArray[0] = 'Ram';
+        myThirdArray[1] = 'Shyam';
+        myThirdArray[2] = 'Hari';
+        myThirdArray[3] = 'Laxman';
+
+        document.write('<br>The value of second index of third array is ' + myThirdArray[1]);
+
+        myFourthArray = ['Sita', 'Gita', 15, 'Apple', 250];
+        document.write('<br>The content of fourth array is:');
+        for (i = 0; i < myFourthArray.length; i++) {
+            document.write('<br>' + myFourthArray[i]);
+        }
+
+        myFifthArray = myThirdArray.concat(myFourthArray);
+        document.write('<br>The length of fifth array is ' + myFifthArray.length);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Switch case example</title>
+</head>
+<body>
+    <div id="switch-case-div"></div>
+    <script>
+        text = '';
+        switch(new Date().getDay()) {
+            case 0:
+                text = 'Today is Sunday.';
+                break;
+            case 1:
+                text = 'Today is Monday.';
+                break;
+            case 2:
+                text = 'Today is Tuesday.';
+                break;
+            case 6:
+                text = 'Today is Saturday.';
+                break;
+            default:
+                text = 'Not a known day.';
+                break;
+        }
+        document.getElementById('switch-case-div').innerHTML = text;
+    </script>
+</body>
+</html>

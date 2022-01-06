@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse click event</title>
+    <style>
+        .dark-mode {
+            background-color: rgb(43, 42, 42);
+            color: white;
+        }
+    </style>
+</head>
+<body id="main-body">
+    <p>Press the below button to change to this webpage into dark-mode.</p>
+    <button id="dark-mode" onclick="darkMode()">Change to dark mode</button><button id="light-mode">Change to light mode</button>
+    <script>
+        document.getElementById('light-mode').onclick = function () {
+            document.getElementById('main-body').className = '';
+        };
+        
+        function darkMode() {
+            document.getElementById('main-body').className = 'dark-mode';
+        }
+    </script>
+</body>
+</html>

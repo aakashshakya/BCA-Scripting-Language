@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Accessing HTML Elements Through JavaScript</title>
+</head>
+
+<body>
+    <p id="demo" class="paragraph"></p>
+    <p></p>
+    <p class="paragraph"></p>
+    <button onclick="darkMode()">Click me</button>
+    <script>
+        document.getElementById('demo').innerHTML = 'This content is changed using getElementById';
+        document.getElementsByTagName('p')[1].innerHTML = 'This content is changed using getElementsByTagName';
+        document.getElementsByClassName('paragraph')[1].innerHTML = 'This content is changed using getElementsByClassName';
+
+        function darkMode() {
+            alert('Hello Homa Baini.');
+        }
+    </script>
+</body>
+
+</html>
