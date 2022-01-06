@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Regular Expression Example</title>
+</head>
+<body>
+    <p id="modifiers-example"></p>
+    <p id="brackets-example"></p>
+    <p id="meta-characters-example"></p>
+    <p id="quantifier-example"></p>
+    <script>
+        text = 'This is the class of Scripting language where we are testing and trying regular expression and we find it cool.';
+        pattern = new RegExp('test', 'i'); //Here i is the modifier to perform case-insensitive matching
+        result = text.match(pattern);
+        document.getElementById('modifiers-example').innerHTML = result;
+
+        pattern = new RegExp('[A-Z]', 'g');
+        document.getElementById('brackets-example').innerHTML = result;
+        result = text.match(pattern);
+        document.getElementById('brackets-example').innerHTML = result;
+
+        pattern = /\s/g;
+        result = text.replace(pattern, '-');
+        document.getElementById('meta-characters-example').innerHTML = result;
+        
+        pattern =  /o+/g;
+        result = text.match(pattern);
+        document.getElementById('quantifier-example').innerHTML = result;
+    </script>
+</body>
+</html>
