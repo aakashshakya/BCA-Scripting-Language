@@ -1,0 +1,1 @@
+document.write('Hello students of BCA 2076!');
