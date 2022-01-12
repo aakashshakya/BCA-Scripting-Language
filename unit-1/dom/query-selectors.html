@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Query Selectors Example</title>
+</head>
+
+<body>
+    <div class="background-red">
+        This div part will be effected.
+    </div>
+    <div>
+        This div part will not be effected.
+    </div>
+    <p class="background-red">
+        This paragraph part will be effected.
+    </p>
+    <button onclick="changeColor()">Try me</button>
+    <script>
+        function changeColor() {
+            var backgroundRedClass = document.querySelectorAll('.background-red');
+            console.log(backgroundRedClass);
+            for (i = 0; i < backgroundRedClass.length; i++) {
+                backgroundRedClass[i].style.backgroundColor = 'red';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add remove attribute</title>
+    <style>
+        .body-style {
+            background-color: blueviolet;
+            color: rgb(54, 54, 54);
+        }
+    </style>
+</head>
+<body>
+    The content of this div will be changed. <br>
+    <button onclick="addClass()">Change Background Color</button>&nbsp;<button onclick="removeClass()">Change to Default</button>
+    <script>
+        function addClass() {
+            document.getElementsByTagName('body')[0].setAttribute('class', 'body-style');
+        }
+
+        function removeClass() {
+            document.getElementsByTagName('body')[0].removeAttribute('class');
+        }
+    </script>
+</body>
+</html>
