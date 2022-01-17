@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Set Interval</title>
+</head>
+<body>
+    <div id="today-date"></div>
+    <script>
+        setInterval(function() {
+            document.getElementById('today-date').innerHTML = new Date().toUTCString();
+        }, 1000);
+    </script>
+</body>
+</html>
