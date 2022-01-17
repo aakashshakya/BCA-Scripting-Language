@@ -3,38 +3,102 @@
 
 <head>
     <title>Login Form Validation</title>
+    <style>
+        body {
+            width: 50%;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: auto;
+        }
+
+        form {
+            border: 3px solid #f1f1f1;
+        }
+
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #2782e9;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+        .error-message {
+            color: red;
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
+    <h2>Login Form</h2>
     <form id="login-form" onsubmit="event.preventDefault(); validateLogin()">
-        <input type="text" placeholder="Enter your username" name="user_name" id="user-name" />
-        <br>
-        <input type="text" placeholder="Enter your password" name="password" id="password" />
-        <br>
-        <input type="submit" value="Login" />
+        <div class="container">
+            <label for="user_name"><b>Username</b></label>
+            <input type="text" placeholder="Enter your username" name="user_name" id="user-name" />
+            <span class="error-message" id="username-validation-message">Username cannot be empty.</span>
+
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter your password" name="password" id="password" />
+            <br>
+            <span class="error-message" id="password-validation-message">Password cannot be empty.</span>
+            <br>
+            <button type="submit">Login</button>
+        </div>
     </form>
     <script>
         function validateLogin() {
-            var userName = document.getElementById('user-name').value;
-            var password = document.getElementById('password').value;
+            userName = document.getElementById('user-name').value;
+            password = document.getElementById('password').value;
+            usernameValidation = document.getElementById('username-validation-message');
+            passwordValidation = document.getElementById('password-validation-message');
+            isValidated = true;
 
             if (userName.trim() == '') {
-                alert('Username cannot be empty!');
-                return false;
+                usernameValidation.style.display = 'block';
+                isValidated = false;
+            } else {
+                usernameValidation.style.display = 'none';
             }
 
             if (password == '') {
-                alert('Password field cannot be empty!');
-                return false;
+                passwordValidation.innerHTML = 'Password cannot be empty.';
+                passwordValidation.style.display = 'block';
+                isValidated = false;
             } else {
                 if (password.length < 8) {
-                    alert('The length of password must be at least 8 characters.');
-                    return false;
+                    passwordValidation.innerHTML = 'The length of password must be greater than 8.';
+                    passwordValidation.style.display = 'block';
+                    isValidated = false;
                 }
             }
-
-            document.getElementById('login-form').submit();
-
+            if (isValidated && confirm('Are you sure you want to login to this page?')) {
+                usernameValidation.style.display = 'none';
+                passwordValidation.style.display = 'none';
+                passwordValidation.innerHTML = 'Password cannot be empty.';
+                document.getElementById('login-form').submit();
+            } else {
+                return false;
+            }
         }
     </script>
 </body>
