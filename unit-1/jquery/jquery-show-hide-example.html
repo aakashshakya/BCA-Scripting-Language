@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery Show Hide Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>Turn on/off the light bulb using jQuery</h1>
+    <br>
+    <button id="turn-on">Turn on the bulb</button> <button id="turn-off">Turn off the bulb</button> <button id="toggle-bulb">Toggle</button>
+    <br>
+    <img src="lights-off.jpg" width="400" id="off-bulb" />
+    <img src="lights-on.jpg" width="400" id="on-bulb" style="display:none; margin-left: 26px"/>
+    <script>
+        $('#turn-on').click(function() {
+            $('#on-bulb').show();
+            $('#off-bulb').hide();
+        });
+        
+        $('#turn-off').click(function() {
+            $('#off-bulb').show();
+            $('#on-bulb').hide();
+        });
+
+        $('#toggle-bulb').click(function() {
+            $('#off-bulb').toggle();
+            $('#on-bulb').toggle();            
+        });
+
+
+
+    </script>
+</body>
+
+</html>

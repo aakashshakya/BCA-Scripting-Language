@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Form Validation</title>
+    <style>
+        body {
+            width: 50%;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: auto;
+        }
+
+        form {
+            border: 3px solid #f1f1f1;
+        }
+
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #2782e9;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+        .error-message {
+            color: red;
+            display: none;
+        }
+
+        .login-success {
+            border: 1px solid rgb(28, 82, 28);
+            display: none;
+            padding: 2px;
+            background-color: rgb(158, 247, 158);
+            ;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>Login Form Validation using jQuery</h1>
+    <form action="#" method="post" id="login-form" onsubmit="event.preventDefault()">
+        <div class="container">
+            <span id="login-success" class="login-success">Login successfull</span>
+            <label for="user_name"></label>
+            <input type="text" name="user_name" id="user_name" placeholder="Enter your username" />
+            <span class="error-message" id="user-name-validation-message">Username cannot be empty.</span>
+
+            <label for="password"></label>
+            <input type="password" name="password" id="password" placeholder="Enter your password" />
+            <span class="error-message" id="password-validation-message">Password cannot be empty.</span>
+            <br>
+            <button type="submit">Login</button>
+        </div>
+    </form>
+    <script>
+        $('#login-form').submit(function () {
+            userName = $('#user_name').val();
+            password = $('#password').val();
+            userName = userName.trim();
+            isValidated = true;
+
+            if (userName == '') {
+                $('#user-name-validation-message').show();
+                isValidated = false;
+            } else {
+                $('#user-name-validation-message').hide();
+            }
+
+            if (password == '') {
+                $('#password-validation-message').show();
+                $('#password-validation-message').text('Password cannot be empty.');
+                isValidated = false;
+            } else {
+                if (password.length < 8) {
+                    $('#password-validation-message').text('The length of password must be greater than 8 characters.');
+                    $('#password-validation-message').show();
+                    isValidated = false;
+                } else {
+                    $('#password-validation-message').hide();
+                }
+            }
+
+            if (isValidated) {
+                $('#login-success').css('display', 'block');
+                setTimeout(function() {
+                    $('#login-form')[0].submit();
+                }, 3000);
+            }
+
+        });
+    </script>
+</body>
+
+</html>
