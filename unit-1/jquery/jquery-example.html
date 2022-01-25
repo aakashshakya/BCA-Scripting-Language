@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1 id="title">jQuery</h1>
+    <p class="paragraph">
+        jQuery is a fast, small, and feature-rich JavaScript library.
+    </p>
+    <p class="paragraph">
+        jQuery also simplifies a lot of the complicated things from JavaScript, like AJAX calls and DOM manipulation.
+    </p>
+    <div>
+        <button id="changeInformation">Change to PHP information</button>
+    </div>
+    <script>
+        $('#changeInformation').click(function () {
+            $('#title').html('PHP');
+            $('.paragraph').html('PHP is a popular general-purpose scripting language that is especially suited to web development.');
+        });
+    </script>
+</body>
+
+</html>
