@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Students form
+    </title>
+  </head>
+  <body>
+    <script>
+      function validate() {
+        var fullName = document.getElementById("full-name").value;
+        var address = document.getElementById("address").value;
+        var mobileNumber = document.getElementById("mobile-number").value;
+        if (fullName == "") {
+          alert("Full name is required.");
+          return false;
+        }
+        if (address == "") {
+          alert("address is required.");
+          return false;
+        }
+        if (mobileNumber == "") {
+          alert("Mobile number is required.");
+          return false;
+        }
+        return true;
+      }
+
+      //   function callOnloadMethod() {
+      //     alert("Unload method called");
+      //   }
+    </script>
+    <form
+      action="http://localhost/BCA-2076/unit-4/crud/insert_record.php"
+      method="POST"
+      onsubmit="return validate()"
+    >
+      <fieldset>
+        <legend>
+          <h2>Student information</h2>
+        </legend>
+        <table>
+          <tr>
+            <td>
+              Full Name
+            </td>
+            <td>
+              <input
+                type="text"
+                placeholder="Enter your full name"
+                name="full_name"
+                id="full-name"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>College</td>
+            <td>
+              <input
+                type="text"
+                name="college"
+                id="college"
+                placeholder="Enter your college"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Address
+            </td>
+            <td>
+              <input
+                type="text"
+                name="address"
+                id="address"
+                placeholder="Enter your address"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Mobile number:</td>
+            <td>
+              <input
+                type="tel"
+                pattern="977-9[0-9]{9}"
+                id="mobile-number"
+                placeholder="Enter your mobile number"
+                name="mobile_number"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Course</td>
+            <td>
+              <select name="faculty">
+                <option value="BCA">Bachelors in Computer Applications</option>
+                <option value="BIM ">Bachelors in Information Management</option>
+                <option value="B.Sc CSIT">Computer Science & Information Technology</option>
+                <option value="B.E(Computer)">Computer Engieering</option>
+                <option value="BIT">Bachelors in Information Technology</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button type="submit">Submit</button>
+            </td>
+            <td>
+              <a href="http://localhost/BCA-2076/unit-4/crud/fetch_records.php"
+                >Go back</a
+              >
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+    </form>
+  </body>
+
+  <style>
+    form {
+      width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    input {
+      width: 270px;
+    }
+    textarea {
+      width: 270px;
+      height: 60px;
+    }
+  </style>
+</html>
