@@ -1,6 +1,11 @@
 <?php
     $fullName = "Aakash Raj Shakya";
     $age = 30;
+
+    $salary = 15000;
+    // $salary = 50000;
+    // $salary = 1000000;
+
     //Concatenating string in PHP
     echo "Welcome to my page from PHP. Namastey from ".$fullName;
     echo "<br /> My age is ".$age;
@@ -11,6 +16,32 @@
         echo "Solti timi ta budo vayechau.";
     } else {
         echo "Abhi to mey jawan huu.";
+    }
+
+    if($salary <= 15000) {
+        echo "<br>Timro salary ta pugena ni";
+    } else if($salary > 15000 && $salary <= 50000) {
+        echo "<br>Yeti dherai salary cha treat diney haina?";
+    } else if($salary > 50000) {
+        echo "<br>K ho maala maal? Ghumauna laane haina?";
+    } else {
+        echo "<br>K ho salary vanna pani kati lajako.";
+    }
+
+    switch ($salary) {
+        case 15000:
+            echo "<br>Timro salary ta pugena ni";
+            break;
+        case 50000:
+            echo "<br>K ho maala maal? Ghumauna laane haina?";
+            break;
+        case 1000000:
+            echo "<br>K ho maala maal? Ghumauna laane haina?";
+            break;
+        default:
+            echo "<br>K ho salary vanna pani kati lajako.";
+            break;
+
     }
 
     echo "<br /><br /><br /> While Loop <br />";
