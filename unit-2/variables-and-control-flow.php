@@ -77,7 +77,16 @@
 
     //Ternary operators
     $number = 565;
-    echo ($number%2==0) ? $number." is an odd number." : $number." is an even number";
+
+    //(condition) ? //what to do if true : "Else what should be done"
+
+    // if($number % 2 == 0) {
+    //     echo "Even";
+    // } else {
+    //     echo "odd";
+    // }
+
+    echo ($number%2==0) ? $number." is an even number." : $number." is an odd number";
 
     //Defining array
     $animals = array(
@@ -115,4 +124,3 @@
     foreach($vehicles as $vehicle) {
         echo $vehicle[1]."<br />";
     }
-?>
