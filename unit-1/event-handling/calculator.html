@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculator</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input {
+            margin: 10px;
+        }
+        label {
+            margin-left: 25px;
+        }
+        fieldset {
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <form>
+            <legend><h1>Basic Arithematic Functions</h1></legend>
+            <input type="text" placeholder="Operand" id="first-number"><br>
+            <input type="text" placeholder="Operand" id="second-number"><br>
+            <input type="button" value="Add" onclick="add()"><input type="button" value="Sub" onclick="sub()"><input type="button" value="Mul" onclick="mul()"><br>
+            <input type="button" value="Div" onclick="div()"><input type="button" value="Mod" onclick="mod()"><br>
+            <label><h3>Result</h3></label>
+            <input type="text" id="result" readonly>
+        </form>
+    </fieldset>
+    <script>
+        firstNumber = document.getElementById('first-number');
+        secondNumber = document.getElementById('second-number');
+        resultOutput = document.getElementById('result');
+
+        function add() {
+            result = Number(firstNumber.value) + Number(secondNumber.value);
+            resultOutput.value = result;
+        }
+
+        function sub() {
+            result = Number(firstNumber.value) - Number(secondNumber.value);
+            resultOutput.value = result;
+        }
+
+        function mul() {
+            result = Number(firstNumber.value) * Number(secondNumber.value);
+            resultOutput.value = result;
+        }
+
+        function div() {
+            result = Number(firstNumber.value) / Number(secondNumber.value);
+            resultOutput.value = result;
+        }
+
+        function mod() {
+            result = Number(firstNumber.value) % Number(secondNumber.value);
+            resultOutput.value = result;
+        }
+
+        
+    </script>
+</body>
+
+</html>
