@@ -1,4 +1,5 @@
 <?php 
 session_start();
-    echo $_SESSION['student_name'];
+echo "Hello from second session page " . $_SESSION['student_name'];
+
 ?>
