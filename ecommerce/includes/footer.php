@@ -1,3 +1,4 @@
+</div>
 <footer>
     <ul>
         <li><a href="https://www.facebook.com">Facebook</a></li>
