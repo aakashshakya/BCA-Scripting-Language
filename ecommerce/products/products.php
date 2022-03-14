@@ -25,7 +25,9 @@ $count = mysqli_fetch_assoc(mysqli_query($conn, $countSql))["number_of_records"]
 <h2>The total number of products is <?= $count ?></h2>
 
 <?php
-$sql = "SELECT * from tbl_product order by price desc";
+$sql = "SELECT prod.id, prod.name, prod.price, cat.category_name from tbl_product prod inner join tbl_categories cat 
+        on prod.category_id = cat.id
+        order by price desc";
 $result = mysqli_query($conn, $sql);
 mysqli_close($conn);
 ?>
@@ -33,12 +35,14 @@ mysqli_close($conn);
     <tr>
         <th>Name</th>
         <th>Price</th>
+        <th>Category Name</th>
     </tr>
     <?php while ($product = mysqli_fetch_array($result)) { ?>
 
         <tr>
             <td><?= $product['name']; ?></td>
             <td><?= $product['price']; ?></td>
+            <td><?= $product['category_name']; ?></td>
         </tr>
 
     <?php }
