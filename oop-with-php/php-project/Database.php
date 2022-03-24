@@ -44,7 +44,7 @@ class Database
                 $result->$i = $row;
                 $i++;
             }
-            return $result;
+            $this->print_data($result);
         }
     }
 
