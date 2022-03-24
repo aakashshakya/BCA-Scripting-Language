@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Save data using Ajax</title>
+    <script type="text/javascript" src="validation.js"></script>
+</head>
+
+<body>
+    <h1 id="message"></h1>
+    <form id="products-form" onsubmit="event.preventDefault(); validateForm();">
+        <input type="text" placeholder="Enter your product name" name="product_name" id="product-name" required><br>
+        <select name="category" id="category">
+            <option value="2">Real-state</option>
+            <option value="3">Electronics</options>
+            <option value="5">Women Clothing</option>
+            <option value="7">Grocery</option>
+        </select><br>
+        <input id="price" type="text" placeholder="Enter the product price" name="product_price" required><br>
+        <textarea id="description" name="product_description" cols="30" rows="10"
+            placeholder="Enter product description"></textarea><br>
+        <input type="submit" value="Save product" /> <a href="products.php">Cancel</a>
+    </form>
+    <button onclick="getProducts()">Get Products</button>
+    <table border="1" id="table">
+        <tr>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Description</th>
+        </tr>
+        
+    </table>
+</body>
+
+</html>
