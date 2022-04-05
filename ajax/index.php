@@ -1,3 +1,3 @@
 <?php
-return "Aakash";
+echo "Hello id number " . $_GET['id'];
 ?>

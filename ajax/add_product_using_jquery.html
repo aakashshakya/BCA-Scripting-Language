@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Save data using Ajax</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <h1 id="message"></h1>
+    <form id="products-form" onsubmit="event.preventDefault(); validateForm();">
+        <input type="text" placeholder="Enter your product name" name="product_name" id="product-name" required><br>
+        <select name="category" id="category">
+            <option value="2">Real-state</option>
+            <option value="3">Electronics</options>
+            <option value="5">Women Clothing</option>
+            <option value="7">Grocery</option>
+        </select><br>
+        <input id="price" type="text" placeholder="Enter the product price" name="product_price" required><br>
+        <textarea id="description" name="product_description" cols="30" rows="10"
+            placeholder="Enter product description"></textarea><br>
+        <input type="submit" value="Save product" /> <a href="products.php">Cancel</a>
+    </form>
+    <button onclick="getProducts()">Get Products</button>
+    <table border="1" id="table">
+        <tr>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Description</th>
+        </tr>
+
+    </table>
+    <script>
+        function validateForm() {
+            var params = {
+                'product_name': document.getElementById('product-name').value,
+                'price': document.getElementById('price').value,
+                'category': document.getElementById('category').value,
+                'description': document.getElementById('description').value,
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "http://localhost/bca-Scripting-Language/ajax/savedata.php",
+                data: JSON.stringify(params),
+                contentType: "application/json; charset=utf-8"
+            }).done(function (data) {
+                alert(data);
+            }).fail(function () {
+            });
+        }
+
+        function getProducts() {
+            $.ajax({
+                type: "GET",
+                url: "http://localhost/bca-Scripting-Language/ajax/savedata.php",
+                contentType: "application/json; charset=utf-8",
+            })
+            .done(function (data) {
+                var data = JSON.parse(data);
+                var table = $('#table');
+                for (i = 0; i < data.length; i++) {
+                    table.append('<tr><td>' + data[i].name + '</td>' + '<td>' + data[i].price + '</td>' + '<td>' + data[i].description + '</td></tr>');
+                }
+            })
+            .fail(function (errMsg) {
+                $("#name").text(errMsg);
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -36,13 +36,14 @@ mysqli_close($conn);
         <th>Name</th>
         <th>Price</th>
         <th>Category Name</th>
+        <th>Action</th>
     </tr>
     <?php while ($product = mysqli_fetch_array($result)) { ?>
-
         <tr>
             <td><?= $product['name']; ?></td>
             <td><?= $product['price']; ?></td>
             <td><?= $product['category_name']; ?></td>
+            <td><a href="http://localhost/bca-Scripting-Language/ecommerce/products/buy_product.php?id=<?=$product['id']?>">Buy product</a></td>
         </tr>
 
     <?php }

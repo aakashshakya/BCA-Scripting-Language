@@ -4,7 +4,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $content_raw = file_get_contents("php://input"); // THIS IS WHAT YOU NEED
     $data = json_decode($content_raw, true); // THIS IS WHAT YOU NEED
-
     $sql = "INSERT into tbl_product (name, price, category_id, description) VALUES ('" . $data['product_name'] . "', " . $data['price'] . ", " . $data['category'] . ", '" . $data['description'] . "')";
     if (mysqli_query($conn, $sql)) {
         echo "Product inserted successfully.";
