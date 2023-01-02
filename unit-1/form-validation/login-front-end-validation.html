@@ -51,10 +51,10 @@
 
 <body>
     <h2>Login Form</h2>
-    <form id="login-form" onsubmit="event.preventDefault(); validateLogin()">
+    <form id="login-form" method="post" action="login.php" onsubmit="event.preventDefault(); validateLogin()">
         <div class="container">
             <label for="user_name"><b>Username</b></label>
-            <input type="text" placeholder="Enter your username" name="user_name" id="user-name" />
+            <input type="text" placeholder="Enter your username" name="dancing_monkey" id="user-name" />
             <span class="error-message" id="username-validation-message">Username cannot be empty.</span>
 
             <label for="password"><b>Password</b></label>
@@ -71,7 +71,7 @@
             password = document.getElementById('password').value;
             usernameValidation = document.getElementById('username-validation-message');
             passwordValidation = document.getElementById('password-validation-message');
-                
+            isValidated = true;    
 
             if (userName.trim() == '') {
                 usernameValidation.style.display = 'block';

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form Validation</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 15px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="user-form" method="POST" action="server.php" onsubmit="validateForm(event);">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <span class="error" id="name-msg">Name cannot be empty.</span><br>
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email"><br>
+        <span class="error" id="email-msg">Email cannot be empty.</span><br>
+        <label for="countries">Select a country:</label><br>
+        <select id="countries" name="countries">
+            <option value="">Please Select a Country</option>
+            <option value="nepal">Nepal</option>
+            <option value="india">India</option>
+            <option value="china">China</option>
+            <option value="united_states">United States</option>
+            <option value="united_kingdom">United Kingdom</option>
+            <option value="france">France</option>
+            <option value="germany">Germany</option>
+            <option value="italy">Italy</option>
+            <option value="spain">Spain</option>
+            <option value="japan">Japan</option>
+        </select>
+        <span class="error" id="country-msg">Please select a country.</span><br><br>
+        <label for="gender">Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label><br>
+        <span class="error" id="gender-msg">Please select a gender.</span><br>
+        <label for="interests">Interests:</label><br>
+        <input type="checkbox" class="interests" id="technology" name="interests" value="technology">
+        <label for="technology">Technology</label><br>
+        <input type="checkbox" class="interests" id="sports" name="interests" value="sports">
+        <label for="sports">Sports</label><br>
+        <input type="checkbox" class="interests" id="arts" name="interests" value="arts">
+        <label for="arts">Arts</label><br>
+        <input type="checkbox" class="interests" id="other" name="interests" value="other">
+        <label for="other">Other</label><br>
+        <span class="error" id="interest-msg">Please select any two interests.</span><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
